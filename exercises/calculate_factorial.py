@@ -8,6 +8,7 @@ def factorial_recursive(number):
         raise RecursionError(f"Recursion limit exceeded at number {number}. "
                              f"Consider using an iterative approach or increasing the recursion limit.")
 
+#implement recursive iterative
 def factorial_iterative(number):
     result = 1
     while number > 1:

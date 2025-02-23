@@ -1,9 +1,20 @@
 # implement factorial_recursive method
+import sys
+
+
 def factorial_recursive(number):
     if number in [0, 1]:
         return 1
     else:
         return number*factorial_recursive(number-1)
+
+# factorial iterative method, to calculate factorial iteratively
+def factorial_iterative(number):
+    result = 1
+    # start at 2 because multiplying by 1 is extra
+    for i in range(2, number + 1):
+        result *= i
+    return result
 
 def check_valid_input(input_str):
     try:
@@ -24,8 +35,15 @@ def calculate_factorial(input_str):
     valid = check_valid_input(input_str)
     if valid:
         number = int(input_str)
-        # Call factorial_recursive method
-        return factorial_recursive(number)
+
+        # Handle recursion limit
+        if number >= sys.getrecursionlimit() // 2:
+            # If number is too large, call factorial_iterative function instead
+            print("Number is too large for recursion, switching to using iterative approach")
+            return factorial_iterative(number)
+        else:
+            # Call factorial_recursive function
+            return factorial_recursive(number)
     else:
         return None
 

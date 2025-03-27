@@ -1,0 +1,6 @@
+SECRET_KEY="super-secret" //replace
+DEBUG=false
+DB_USER="postgres"
+DB_NAME = "MCON-357-DB"
+DB_HOST = "db server"
+DB_PORT = 5432

@@ -4,7 +4,7 @@
 EC2_PUBLIC_IP=$(ec2metadata --public-ipv4)
 
 # Replace placeholder in the nginx config template
-CONFIG_TEMPLATE="/home/ubuntu/MCON-357-Spring-2025/myproject/myproject-nginx.conf"
+CONFIG_TEMPLATE="/home/ubuntu/MCON-357-Spring-2025/myproject/config/myproject-nginx.conf"
 CONFIG_TEMP="/tmp/myproject-nginx.conf"
 sed "s/your-ec2-ip/${EC2_PUBLIC_IP}/g" "$CONFIG_TEMPLATE" > "$CONFIG_TEMP"
 

@@ -18,7 +18,11 @@ def factorial_iterative(number):
 def main():
     print("Factorial Computation Using Recursion")
     string = input("Enter a non-negative integer: ")
-    number, message = process_input(string)
+    number = None
+    while number is None:
+        number, message = process_input(string)
+        if number is None:
+            print(message)
     # Call factorial_recursive method
     print_factorial(number)
 
